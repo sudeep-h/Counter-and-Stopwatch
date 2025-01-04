@@ -5,8 +5,10 @@ let counterDisplayStart=document.getElementById('counter-display-start');
 let counterDisplayStop=document.getElementById('counter-display-stop');
 let stopWatchBtn=document.getElementById('stop-watch-start');
 let stopWatchStartDisplay=document.getElementById('stop-watch-start-display');
+let stopWatchResetDisplay=document.getElementById('stop-watch-reset-display');
 
 let form=document.getElementById('timer-form');
+let resetTimer = document.getElementById("timer-reset");
 
 let intervalIdCounter;
 let currentCounter;
@@ -49,15 +51,24 @@ form.addEventListener("submit",function(e){
     e.preventDefault();
     let formData=new FormData(form);
     let duration = formData.get("timer");
+
     let b=counter();
-    console.log(duration);
+
     let intervalId=setInterval(function(){
         stopWatchStartDisplay.innerText=b();
+        stopWatchResetDisplay.innerHTML='';
     },1000)
 
     setTimeout(function(){
         clearInterval(intervalId);
         stopWatchStartDisplay.innerHTML='Time out!';
     },duration*1000);
+    stopWatchStartDisplay.innerHTML='';
    
+})
+
+resetTimer.addEventListener("click",function(){
+    form.reset();
+    stopWatchStartDisplay.innerHTML='';
+    stopWatchResetDisplay.innerHTML='Reset the time.';
 })
