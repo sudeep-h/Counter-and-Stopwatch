@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 10px;
+    color: #333;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+h1, h2 {
+    color: #444;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex;
+    gap: 30px; 
+    flex-wrap: wrap; 
+}
+
+.counter, .stopwatch {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    width: 60%; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-width: 400px; 
+}
+
+
+button {
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#stop {
+    background-color: #dc3545;
+}
+
+#stop:hover {
+    background-color: #a71d2a;
+}
+
+form {
+    margin: 20px 0;
+}
+
+input[type="number"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 80%;
+    font-size: 16px;
+}
+
+input[type="number"]::placeholder {
+    color: #aaa;
+}
+
+#timer-button {
+    background-color: #28a745;
+}
+
+#timer-button:hover {
+    background-color: #218838;
+}
